@@ -8,7 +8,7 @@ services:
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: wordpress
-      WORDPRESS_DB_PASSWORD: Aigh5Oir 
+      WORDPRESS_DB_PASSWORD: ${USER_PASSWORD} 
       WORDPRESS_DB_NAME: wordpress
     volumes:
        - wordpress:/var/www/html
@@ -16,10 +16,10 @@ services:
     image: mariadb:10.6.3-focal
     restart: unless-stopped
     environment: 
-      MYSQL_ROOT_PASSWORD: ebeeph2Y
+      MYSQL_ROOT_PASSWORD: ${ROOT_PASSWORD}
       MYSQL_DATABASE: wordpress
       MYSQL_USER: wordpress
-      MYSQL_PASSWORD: Aigh5Oir
+      MYSQL_PASSWORD: ${USER_PASSWORD}
     volumes:
        - mariadb:/var/lib/mysql
 
